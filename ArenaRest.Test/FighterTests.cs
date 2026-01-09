@@ -8,7 +8,7 @@ public class FighterTests
     [Fact]
     public void Fighter_Should_Reduce_Hp_When_Taking_Damage()
     {
-        var fighter = new Fighter("Hero", 100, 0); 
+        var fighter = new Fighter("Hero", 100, 1); 
 
         fighter.TakeDamage(10);
 
@@ -18,7 +18,7 @@ public class FighterTests
     [Fact]
     public void CurrentHp_Should_Not_Drop_Below_Zero()
     {
-        var fighter = new Fighter("Weakling", 50, 0);
+        var fighter = new Fighter("Weakling", 50, 1);
 
         fighter.TakeDamage(100);
 
@@ -28,7 +28,7 @@ public class FighterTests
     [Fact]
     public void IsDead_Should_Be_True_When_Hp_Is_Zero()
     {
-        var fighter = new Fighter("Zombie", 10, 0);
+        var fighter = new Fighter("Zombie", 10, 1);
 
         fighter.TakeDamage(10);
 

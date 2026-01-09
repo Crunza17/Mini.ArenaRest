@@ -9,12 +9,12 @@ public class Fighter
     
     public bool IsDead => CurrentHp == 0;
 
-    public Fighter(string name, int maxhp, int strength)
+    public Fighter(string name, int maxHp, int strength)
     {
-        Name = name;
-        MaxHp = maxhp;
-        Strength = strength;
-        CurrentHp = maxhp;
+        Name = string.IsNullOrEmpty(name) ? throw new ArgumentNullException(nameof(name)) : name;
+        MaxHp = maxHp <= 0 ? throw new ArgumentNullException(nameof(maxHp)) : maxHp;
+        Strength = strength <= 0 ? throw new ArgumentNullException(nameof(strength)) : strength;
+        CurrentHp = maxHp;
     }
 
     public void TakeDamage(int amount)
